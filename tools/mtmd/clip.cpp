@@ -11,7 +11,12 @@
 #include "ggml-backend.h"
 #include "gguf.h"
 
+#ifndef SKIP_STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_IMPLEMENTATION
+#else 
+#include <stdio.h>
+#include <stdarg.h>
+#endif
 #include "stb_image.h"
 
 #include <cassert>
